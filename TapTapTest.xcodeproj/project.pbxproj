@@ -12,7 +12,40 @@
 		3CB3F3072ABAAF0900E0514E /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB3F3062ABAAF0900E0514E /* Item.swift */; };
 		3CB3F3092ABAAF0A00E0514E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CB3F3082ABAAF0A00E0514E /* Assets.xcassets */; };
 		3CB3F30C2ABAAF0A00E0514E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CB3F30B2ABAAF0A00E0514E /* Preview Assets.xcassets */; };
+		3CB3F3192ABAAFCE00E0514E /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CB3F3182ABAAFCE00E0514E /* WidgetKit.framework */; };
+		3CB3F31B2ABAAFCE00E0514E /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CB3F31A2ABAAFCE00E0514E /* SwiftUI.framework */; };
+		3CB3F31E2ABAAFCE00E0514E /* MyWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB3F31D2ABAAFCE00E0514E /* MyWidgetBundle.swift */; };
+		3CB3F3202ABAAFCE00E0514E /* MyWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB3F31F2ABAAFCE00E0514E /* MyWidget.swift */; };
+		3CB3F3222ABAAFCF00E0514E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CB3F3212ABAAFCF00E0514E /* Assets.xcassets */; };
+		3CB3F3262ABAAFCF00E0514E /* MyWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 3CB3F3162ABAAFCE00E0514E /* MyWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		3CB3F32B2ABAB03E00E0514E /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB3F3062ABAAF0900E0514E /* Item.swift */; };
+		3CB3F32F2ABAB3DA00E0514E /* ToggleIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB3F32E2ABAB3DA00E0514E /* ToggleIntent.swift */; };
+		3CC270202ABC7B36001599B9 /* MyWidgetEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC2701F2ABC7B36001599B9 /* MyWidgetEntryView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3CB3F3242ABAAFCF00E0514E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3CB3F2F72ABAAF0900E0514E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3CB3F3152ABAAFCE00E0514E;
+			remoteInfo = MyWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3CB3F32A2ABAAFCF00E0514E /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				3CB3F3262ABAAFCF00E0514E /* MyWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		3CB3F2FF2ABAAF0900E0514E /* TapTapTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TapTapTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -21,6 +54,17 @@
 		3CB3F3062ABAAF0900E0514E /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		3CB3F3082ABAAF0A00E0514E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3CB3F30B2ABAAF0A00E0514E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3CB3F3162ABAAFCE00E0514E /* MyWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MyWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		3CB3F3182ABAAFCE00E0514E /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		3CB3F31A2ABAAFCE00E0514E /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		3CB3F31D2ABAAFCE00E0514E /* MyWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWidgetBundle.swift; sourceTree = "<group>"; };
+		3CB3F31F2ABAAFCE00E0514E /* MyWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWidget.swift; sourceTree = "<group>"; };
+		3CB3F3212ABAAFCF00E0514E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3CB3F3232ABAAFCF00E0514E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3CB3F32C2ABAB2FC00E0514E /* MyWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MyWidgetExtension.entitlements; sourceTree = "<group>"; };
+		3CB3F32D2ABAB32500E0514E /* TapTapTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TapTapTest.entitlements; sourceTree = "<group>"; };
+		3CB3F32E2ABAB3DA00E0514E /* ToggleIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleIntent.swift; sourceTree = "<group>"; };
+		3CC2701F2ABC7B36001599B9 /* MyWidgetEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWidgetEntryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,13 +75,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3CB3F3132ABAAFCE00E0514E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3CB3F31B2ABAAFCE00E0514E /* SwiftUI.framework in Frameworks */,
+				3CB3F3192ABAAFCE00E0514E /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		3CB3F2F62ABAAF0900E0514E = {
 			isa = PBXGroup;
 			children = (
+				3CB3F32C2ABAB2FC00E0514E /* MyWidgetExtension.entitlements */,
 				3CB3F3012ABAAF0900E0514E /* TapTapTest */,
+				3CB3F31C2ABAAFCE00E0514E /* MyWidget */,
+				3CB3F3172ABAAFCE00E0514E /* Frameworks */,
 				3CB3F3002ABAAF0900E0514E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -46,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				3CB3F2FF2ABAAF0900E0514E /* TapTapTest.app */,
+				3CB3F3162ABAAFCE00E0514E /* MyWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -53,6 +110,7 @@
 		3CB3F3012ABAAF0900E0514E /* TapTapTest */ = {
 			isa = PBXGroup;
 			children = (
+				3CB3F32D2ABAB32500E0514E /* TapTapTest.entitlements */,
 				3CB3F3022ABAAF0900E0514E /* TapTapTestApp.swift */,
 				3CB3F3042ABAAF0900E0514E /* ContentView.swift */,
 				3CB3F3062ABAAF0900E0514E /* Item.swift */,
@@ -70,6 +128,28 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		3CB3F3172ABAAFCE00E0514E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3CB3F3182ABAAFCE00E0514E /* WidgetKit.framework */,
+				3CB3F31A2ABAAFCE00E0514E /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3CB3F31C2ABAAFCE00E0514E /* MyWidget */ = {
+			isa = PBXGroup;
+			children = (
+				3CB3F3212ABAAFCF00E0514E /* Assets.xcassets */,
+				3CB3F3232ABAAFCF00E0514E /* Info.plist */,
+				3CB3F32E2ABAB3DA00E0514E /* ToggleIntent.swift */,
+				3CB3F31F2ABAAFCE00E0514E /* MyWidget.swift */,
+				3CB3F31D2ABAAFCE00E0514E /* MyWidgetBundle.swift */,
+				3CC2701F2ABC7B36001599B9 /* MyWidgetEntryView.swift */,
+			);
+			path = MyWidget;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -80,15 +160,34 @@
 				3CB3F2FB2ABAAF0900E0514E /* Sources */,
 				3CB3F2FC2ABAAF0900E0514E /* Frameworks */,
 				3CB3F2FD2ABAAF0900E0514E /* Resources */,
+				3CB3F32A2ABAAFCF00E0514E /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				3CB3F3252ABAAFCF00E0514E /* PBXTargetDependency */,
 			);
 			name = TapTapTest;
 			productName = TapTapTest;
 			productReference = 3CB3F2FF2ABAAF0900E0514E /* TapTapTest.app */;
 			productType = "com.apple.product-type.application";
+		};
+		3CB3F3152ABAAFCE00E0514E /* MyWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3CB3F3272ABAAFCF00E0514E /* Build configuration list for PBXNativeTarget "MyWidgetExtension" */;
+			buildPhases = (
+				3CB3F3122ABAAFCE00E0514E /* Sources */,
+				3CB3F3132ABAAFCE00E0514E /* Frameworks */,
+				3CB3F3142ABAAFCE00E0514E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MyWidgetExtension;
+			productName = MyWidgetExtension;
+			productReference = 3CB3F3162ABAAFCE00E0514E /* MyWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -101,6 +200,9 @@
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					3CB3F2FE2ABAAF0900E0514E = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					3CB3F3152ABAAFCE00E0514E = {
 						CreatedOnToolsVersion = 15.0;
 					};
 				};
@@ -119,6 +221,7 @@
 			projectRoot = "";
 			targets = (
 				3CB3F2FE2ABAAF0900E0514E /* TapTapTest */,
+				3CB3F3152ABAAFCE00E0514E /* MyWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -130,6 +233,14 @@
 			files = (
 				3CB3F30C2ABAAF0A00E0514E /* Preview Assets.xcassets in Resources */,
 				3CB3F3092ABAAF0A00E0514E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3CB3F3142ABAAFCE00E0514E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3CB3F3222ABAAFCF00E0514E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,7 +257,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3CB3F3122ABAAFCE00E0514E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3CC270202ABC7B36001599B9 /* MyWidgetEntryView.swift in Sources */,
+				3CB3F31E2ABAAFCE00E0514E /* MyWidgetBundle.swift in Sources */,
+				3CB3F32F2ABAB3DA00E0514E /* ToggleIntent.swift in Sources */,
+				3CB3F32B2ABAB03E00E0514E /* Item.swift in Sources */,
+				3CB3F3202ABAAFCE00E0514E /* MyWidget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3CB3F3252ABAAFCF00E0514E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3CB3F3152ABAAFCE00E0514E /* MyWidgetExtension */;
+			targetProxy = 3CB3F3242ABAAFCF00E0514E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		3CB3F30D2ABAAF0A00E0514E /* Debug */ = {
@@ -271,8 +402,10 @@
 		3CB3F3102ABAAF0A00E0514E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TapTapTest/TapTapTest.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TapTapTest/Preview Content\"";
@@ -300,8 +433,10 @@
 		3CB3F3112ABAAF0A00E0514E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TapTapTest/TapTapTest.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TapTapTest/Preview Content\"";
@@ -326,6 +461,62 @@
 			};
 			name = Release;
 		};
+		3CB3F3282ABAAFCF00E0514E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = MyWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = N8N37QWHHP;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MyWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MyWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.solidred.TapTapTest.MyWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3CB3F3292ABAAFCF00E0514E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = MyWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = N8N37QWHHP;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MyWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MyWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.solidred.TapTapTest.MyWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -343,6 +534,15 @@
 			buildConfigurations = (
 				3CB3F3102ABAAF0A00E0514E /* Debug */,
 				3CB3F3112ABAAF0A00E0514E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3CB3F3272ABAAFCF00E0514E /* Build configuration list for PBXNativeTarget "MyWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3CB3F3282ABAAFCF00E0514E /* Debug */,
+				3CB3F3292ABAAFCF00E0514E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

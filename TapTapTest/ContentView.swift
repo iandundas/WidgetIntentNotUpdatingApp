@@ -7,55 +7,39 @@
 
 import SwiftUI
 import SwiftData
+import WidgetKit
 
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
+    @Environment(\.scenePhase) private var phase
     @Query private var items: [Item]
 
     var body: some View {
-        NavigationSplitView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
-                    } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
-                    }
-                }
-                .onDelete(perform: deleteItems)
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
+        List {
+            ForEach(items) { item in
+                Button {
+                    item.completed.toggle()
+                    try! modelContext.save()
+                } label: {
+                    Text("Tap to toggle: \(item.completed ? "true" : "false")")
                 }
             }
-        } detail: {
-            Text("Select an item")
         }
-    }
-
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(timestamp: Date())
-            modelContext.insert(newItem)
+        .onChange(of: phase) {
+            WidgetCenter.shared.reloadAllTimelines()
         }
-    }
+        .onAppear() {
 
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            for index in offsets {
-                modelContext.delete(items[index])
+            // Insert an Item if DB is empty:
+            if try! modelContext.fetch(FetchDescriptor<Item>()).isEmpty {
+                let newItem = Item(id: UUID().uuidString, timestamp: Date(), completed: false)
+                modelContext.insert(newItem)
+
+                try! modelContext.save()
+
+                WidgetCenter.shared.reloadAllTimelines()
             }
         }
     }
-}
 
-#Preview {
-    ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
 }
