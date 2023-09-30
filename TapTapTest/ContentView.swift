@@ -6,20 +6,24 @@
 //
 
 import SwiftUI
-import SwiftData
+import RealmSwift
 import WidgetKit
 
 struct ContentView: View {
-    @Environment(\.modelContext) private var modelContext
     @Environment(\.scenePhase) private var phase
-    @Query private var items: [Item]
+    @Environment(\.realmConfiguration) private var realmConfiguration
+    @ObservedResults(Item.self) private var items
 
     var body: some View {
         List {
+            Text("Hello")
             ForEach(items) { item in
                 Button {
-                    item.completed.toggle()
-                    try! modelContext.save()
+                    let realm = try! Realm(configuration: realmConfiguration)
+                    try! realm.write {
+                        item.thaw()?.completed.toggle()
+                    }
+                    // try! modelContext.save()
                 } label: {
                     Text("Tap to toggle: \(item.completed ? "true" : "false")")
                 }
@@ -30,15 +34,18 @@ struct ContentView: View {
         }
         .onAppear() {
 
-            // Insert an Item if DB is empty:
-            if try! modelContext.fetch(FetchDescriptor<Item>()).isEmpty {
-                let newItem = Item(id: UUID().uuidString, timestamp: Date(), completed: false)
-                modelContext.insert(newItem)
-
-                try! modelContext.save()
+            if items.isEmpty {
+                $items.append(Item())
+            }
+//            // Insert an Item if DB is empty:
+//            if try! modelContext.fetch(FetchDescriptor<Item>()).isEmpty {
+//                let newItem = Item(id: UUID().uuidString, timestamp: Date(), completed: false)
+//                modelContext.insert(newItem)
+//
+//                try! modelContext.save()
 
                 WidgetCenter.shared.reloadAllTimelines()
-            }
+//            }
         }
     }
 

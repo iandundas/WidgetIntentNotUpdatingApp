@@ -7,7 +7,7 @@
 
 import WidgetKit
 import SwiftUI
-import SwiftData
+import RealmSwift
 
 struct SimpleEntry: TimelineEntry {
     let date: Date
@@ -34,12 +34,14 @@ struct Provider: TimelineProvider {
 
     @MainActor
     func getItems() -> [Item] {
-        guard let modelContainer = try? ModelContainer(for: Item.self) else {
+        do {
+            let realm = try Realm(configuration: .ian)
+            let items = realm.objects(Item.self)
+            return Array(items)
+        }
+        catch {
             return []
         }
-
-        let items = try? modelContainer.mainContext.fetch(FetchDescriptor<Item>())
-        return items ?? []
     }
 }
 

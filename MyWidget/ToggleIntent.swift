@@ -6,7 +6,7 @@
 //
 
 import AppIntents
-import SwiftData
+import RealmSwift
 
 struct ToggleFavoriteIntent: AppIntent {
 
@@ -27,28 +27,13 @@ struct ToggleFavoriteIntent: AppIntent {
     @MainActor
     func perform() async throws -> some IntentResult {
 
-        let schema = Schema([Item.self])
-        let modelConfiguration = ModelConfiguration(
-            schema: schema,
-            isStoredInMemoryOnly: false,
-            allowsSave: true,
-            groupContainer: ModelConfiguration.GroupContainer.identifier("group.solidred.debugging")
-        )
+        let realm = try await Realm(configuration: .ian)
+        let items = realm.objects(Item.self).first
 
-        guard let modelContainer = try? ModelContainer(for: schema, configurations: [modelConfiguration]) else {
-            return .result()
-        }
-
-        let descriptor = FetchDescriptor<Item>(predicate: #Predicate { item in
-            item.id == itemID
-        })
-
-        let context = modelContainer.mainContext
-        let items = try! context.fetch(descriptor)
-
-        if let item = items.first {
-            item.completed.toggle()
-            try! context.save()
+        if let item = items {
+            try realm.write {
+                item.completed.toggle()
+            } 
         }
 
         return .result()

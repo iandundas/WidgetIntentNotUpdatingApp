@@ -12,11 +12,11 @@ struct MyWidgetEntryView : View {
 
     var body: some View {
         VStack {
-            Text("Time:")
-            Text(entry.date, style: .time)
-
+            if entry.items.isEmpty {
+                Text("empty")
+            }
             ForEach(entry.items) { item in
-                Button(intent: ToggleFavoriteIntent(itemID: item.id)) {
+                Button(intent: ToggleFavoriteIntent()) {
                     Text("Is Toggled? \(item.completed ? "true" : "false")")
                 }
             }
