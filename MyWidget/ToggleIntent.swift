@@ -28,7 +28,12 @@ struct ToggleFavoriteIntent: AppIntent {
     func perform() async throws -> some IntentResult {
 
         let schema = Schema([Item.self])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
+        let modelConfiguration = ModelConfiguration(
+            schema: schema,
+            isStoredInMemoryOnly: false,
+            allowsSave: true,
+            groupContainer: ModelConfiguration.GroupContainer.identifier("group.solidred.debugging")
+        )
 
         guard let modelContainer = try? ModelContainer(for: schema, configurations: [modelConfiguration]) else {
             return .result()

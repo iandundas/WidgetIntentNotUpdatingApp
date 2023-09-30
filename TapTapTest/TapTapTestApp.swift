@@ -14,7 +14,12 @@ struct TapTapTestApp: App {
         let schema = Schema([
             Item.self,
         ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
+        let modelConfiguration = ModelConfiguration(
+            schema: schema,
+            isStoredInMemoryOnly: false,
+            allowsSave: true,
+            groupContainer: ModelConfiguration.GroupContainer.identifier("group.solidred.debugging")
+        )
 
         do {
             return try ModelContainer(for: schema, configurations: [modelConfiguration])
